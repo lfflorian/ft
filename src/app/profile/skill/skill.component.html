@@ -1,0 +1,20 @@
+<div *ngIf="skill">
+    <h1>{{ skill.name }}</h1>
+    <h3>Proficiency: {{ skill.proficiency }}</h3>
+    <h3>Recommendations: {{ skill.recommendations }}</h3>
+
+    <h3>Other people with this skill:</h3>
+    <div *ngIf="users">
+        <container-element *ngFor="let user of users.results">
+            <div class="userContainer" (click)="goToProfile(user.username)">
+                <div class="logo-container">
+                    <div class="hexagon">
+                        <img [src]="user.picture" alt="">
+                    </div>
+                </div>
+                <h4>{{ user.name }}</h4>
+                <p>{{ user.professionalHeadline }}</p>
+            </div>
+        </container-element>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div *ngIf="user">
+    <div class="container">
+        <div class="logo-container">
+            <div class="hexagon">
+                <img [src]="user.person.pictureThumbnail" alt="">
+            </div>
+        </div>
+        
+        <h2>{{user.person.name}}</h2>
+        <h2>{{user.person.professionalHeadline}}</h2>
+    
+        <h3>Skills and interests</h3>
+        <h4>expert</h4>
+        <div class="skill-container">
+            <container-element *ngFor="let strength of expert">
+                <p (click)="skillSelected(strength)">{{ strength.name }}</p>
+            </container-element>
+        </div>
+        <h4>proficient</h4>
+        <div class="skill-container">
+            <container-element *ngFor="let strength of proficient">
+                <p (click)="skillSelected(strength)">{{ strength.name }}</p>
+            </container-element>
+        </div>
+        <h4>novice</h4>
+        <div class="skill-container">
+            <container-element *ngFor="let strength of novice">
+                <p (click)="skillSelected(strength)">{{ strength.name }}</p>
+            </container-element>
+        </div>
+        <h4>no-experience-interested</h4>
+        <div class="skill-container">
+            <container-element *ngFor="let strength of noExperienceInterested">
+                <p (click)="skillSelected(strength)">{{ strength.name }}</p>
+            </container-element>
+        </div>
+    </div>
+</div>
